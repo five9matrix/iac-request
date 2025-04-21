@@ -1,10 +1,5 @@
 terraform {
-    cloud {
-    organization = "my-iac-demo-org"
-    workspaces {
-      name = "iac-vm"
-    }
-    }
+
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
