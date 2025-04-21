@@ -42,7 +42,7 @@ resource "azurerm_subnet" "example" {
 }
 
 resource "azurerm_network_interface" "example" {
-    for_each = toset([var.vm_name])
+    for_each = toset(var.vm_name)
   name                = "${each.key}-nic"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -55,7 +55,7 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_windows_virtual_machine" "example" {
-    for_each = toset([var.vm_name])
+    for_each = toset(var.vm_name)
   name                = "${each.key}-vm"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
